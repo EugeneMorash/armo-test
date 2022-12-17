@@ -1,0 +1,17 @@
+.access-status {
+    opacity: 0.5;
+}
+
+.selected-page {
+    font-weight: bold;
+}
+
+th,
+td {
+    padding: 10px;
+    overflow: hidden;
+}
+
+td:nth-child(even) {
+    background: #f8f6ff;
+}

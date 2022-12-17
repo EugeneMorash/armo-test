@@ -2,10 +2,12 @@ import {applyMiddleware, combineReducers, legacy_createStore as createStore} fro
 import {AppActionType, appReducer} from "./app-reducer";
 import thunk, {ThunkAction, ThunkDispatch} from "redux-thunk";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
+import {UsersActionType, usersReducer} from "../components/users-reducer";
 
 
 const rootReducer = combineReducers({
-    app: appReducer
+    app: appReducer,
+    users: usersReducer
 })
 
 export const store = createStore(rootReducer, applyMiddleware(thunk))
@@ -21,6 +23,7 @@ export const useAppSelector: TypedUseSelectorHook<AppRootStateType> = useSelecto
 export type AppRootStateType = ReturnType<typeof store.getState>
 export type AppActionsType =
     | AppActionType
+    | UsersActionType
 
 export type AppDispatchType = ThunkDispatch<AppRootStateType, unknown, AppActionsType>
 export type AppThunkType<ReturnType = void> = ThunkAction<ReturnType, AppRootStateType, unknown, AppActionsType>
@@ -28,10 +31,6 @@ export type AppThunkType<ReturnType = void> = ThunkAction<ReturnType, AppRootSta
 
 // @ts-ignore
 window.store = store
-
-
-
-
 
 
 // @ts-ignore

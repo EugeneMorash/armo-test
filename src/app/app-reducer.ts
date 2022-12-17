@@ -1,53 +1,29 @@
-import {appAPI, ResponseUserType} from "../api/app-api";
-import {AppThunkType} from "./store";
-import {AxiosError} from "axios";
-
-
 const initialState = {
-    users: [] as ResponseUserType[]
+    isLoading: false
 }
 
 export type AppStateType = typeof initialState
-
 export type AppActionType =
-    | getUsersAT
+    | SetLoadingAT
 
 
-type getUsersAT = ReturnType<typeof getUsersAC>
+export type SetLoadingAT = ReturnType<typeof setLoadingAC>
 
 export const appReducer = (state: AppStateType = initialState, action: AppActionType): AppStateType => {
     switch (action.type) {
-        case 'GET-USERS':
+        case "APP/SET-LOADING":
             return {
                 ...state,
-                users: action.users
+                isLoading: action.isLoading
             }
+
         default:
-            return state;
+            return state
     }
 }
 
-//* # Action Creator
 
-export const getUsersAC = (users: ResponseUserType[]) => ({
-    type: 'GET-USERS',
-    users
+export const setLoadingAC = (isLoading: boolean) => ({
+    type: 'APP/SET-LOADING',
+    isLoading
 }) as const
-
-//* # Thunk Creator
-
-export const getUsersTC = (): AppThunkType => {
-    return (dispatch) => {
-        // dispatch(setLoadingAC(true))
-        appAPI.getUsers()
-            .then((res) => {
-                dispatch(getUsersAC(res.data))
-            })
-            .catch((e: AxiosError) => {
-                alert(e)
-            })
-            // .finally(() => {
-            //     dispatch(setLoadingAC(false))
-            // })
-    }
-    }

@@ -10,7 +10,6 @@ export type ResponseUserType = {
     firstName: string
 }
 
-
 export const appAPI = {
     getUsers() {
         return instance.get<ResponseUserType[]>('/')
