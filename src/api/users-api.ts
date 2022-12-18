@@ -10,8 +10,14 @@ export type ResponseUserType = {
     firstName: string
 }
 
-export const appAPI = {
+export const userAPI = {
     getUsers() {
         return instance.get<ResponseUserType[]>('/')
     },
+    deleteUser(id: number) {
+        return instance.delete<ResponseUserType>(`/${id}`)
+    },
+    changeAccessStatus(id: number, access: boolean) {
+        return instance.put<ResponseUserType>(`/${id}`, {access})
+    }
 }

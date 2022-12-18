@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
+import React, {ChangeEvent, useEffect} from 'react';
 import {store, useAppDispatch, useAppSelector} from "../app/store";
 import {Checkbox, IconButton} from "@material-ui/core";
 import {Delete as DeleteIcon} from "@material-ui/icons";
-import {getUsersTC} from "./users-reducer";
+import {changeAccessStatusTC, deleteUserTC, getUsersTC} from "./users-reducer";
 import {Loader} from "./Loader/Loader";
 import './Users.scss'
 
@@ -34,12 +34,12 @@ export function Users() {
                 </thead>
                 <tbody>
                 {users.map((u) => {
-                    const onCheckHandler = () => {
-
+                    const onCheckHandler = (e: ChangeEvent<HTMLInputElement>) => {
+                        dispatch(changeAccessStatusTC(u.id, e.currentTarget.checked))
                     };
 
                     const onClickHandler = () => {
-
+                        dispatch(deleteUserTC(u.id))
                     };
 
                     return <tr key={u.id} className={u.access ? 'access-status' : ''}>
