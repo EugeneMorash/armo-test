@@ -1,5 +1,5 @@
 import React, {ChangeEvent, useEffect} from 'react';
-import {store, useAppDispatch, useAppSelector} from "../app/store";
+import {AppDispatchType, store, useAppDispatch, useAppSelector} from "../app/store";
 import {Checkbox, IconButton} from "@material-ui/core";
 import {Delete as DeleteIcon} from "@material-ui/icons";
 import {changeAccessStatusTC, deleteUserTC, getUsersTC} from "./users-reducer";
@@ -8,7 +8,7 @@ import './Users.scss'
 
 export function Users() {
 
-    const dispatch: any = useAppDispatch();
+    const dispatch: AppDispatchType = useAppDispatch();
 
     const isLoading = useAppSelector((state) => state.app.isLoading)
 

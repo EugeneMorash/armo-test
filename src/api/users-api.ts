@@ -19,5 +19,8 @@ export const userAPI = {
     },
     changeAccessStatus(id: number, access: boolean) {
         return instance.put<ResponseUserType>(`/${id}`, {access})
-    }
+    },
+    // addUser(id: number, )
 }
+
+
