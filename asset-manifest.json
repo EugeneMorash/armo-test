@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.ae7cedc2.css",
-    "main.js": "/static/js/main.2b0af6ba.js",
-    "static/js/787.b4f4ead7.chunk.js": "/static/js/787.b4f4ead7.chunk.js",
-    "index.html": "/index.html",
-    "main.ae7cedc2.css.map": "/static/css/main.ae7cedc2.css.map",
-    "main.2b0af6ba.js.map": "/static/js/main.2b0af6ba.js.map",
-    "787.b4f4ead7.chunk.js.map": "/static/js/787.b4f4ead7.chunk.js.map"
+    "main.css": "/armo-test/static/css/main.ae7cedc2.css",
+    "main.js": "/armo-test/static/js/main.b1ace3e5.js",
+    "static/js/787.b4f4ead7.chunk.js": "/armo-test/static/js/787.b4f4ead7.chunk.js",
+    "index.html": "/armo-test/index.html",
+    "main.ae7cedc2.css.map": "/armo-test/static/css/main.ae7cedc2.css.map",
+    "main.b1ace3e5.js.map": "/armo-test/static/js/main.b1ace3e5.js.map",
+    "787.b4f4ead7.chunk.js.map": "/armo-test/static/js/787.b4f4ead7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ae7cedc2.css",
-    "static/js/main.2b0af6ba.js"
+    "static/js/main.b1ace3e5.js"
   ]
 }
